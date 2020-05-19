@@ -1,7 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.css';
 import App from './components/App';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
-ReactDOM.render(<App/>, document.getElementById('app'));
+const theme = createMuiTheme({
+    typography: {
+        useNextVariants: true,
+        fontFamily: '"Noto Sans KR"'
+    }
+});
 
-//https://github.com/Mins97/react-wordcloud.git
+ReactDOM.render(<MuiThemeProvider theme={theme}><App /></MuiThemeProvider>, document.getElementById('app'));
